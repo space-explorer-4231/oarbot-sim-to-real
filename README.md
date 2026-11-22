@@ -13,3 +13,9 @@ Kim, M., Yuk, D.-G., Lee, J., & Sohn, J. W. (2026). *Sim-to-Real Transfer of Dee
 ## How it informs OARBot
 
 The OARBot Reach setup adapts the paper's target randomization and PPO joint-position control for the six Kinova arm joints. Table 3 of the paper provides the starting PPO settings. The OARBot evaluation will measure reach success, gripper position error, and time to reach on cube positions reserved for testing.
+
+
+also used [2000 demention safty fetures.pdf](https://github.com/user-attachments/files/35247323/2000.demention.safty.fetures.pdf)
+
+
+[Super Mimic Paper.pdf](https://github.com/user-attachments/files/35247318/Super.Mimic.Paper.pdf)
