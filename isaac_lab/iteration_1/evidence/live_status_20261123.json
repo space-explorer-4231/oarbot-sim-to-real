@@ -1,0 +1,119 @@
+{
+  "captured_utc": "2026-11-23T22:05:08.642133+00:00",
+  "run_name": "2026-11-23_16-55-45",
+  "latest_scalars": {
+    "Episode_Reward/approach": {
+      "step": 28,
+      "value": 0.3770439624786377,
+      "wall_time": 1795471499.4247053
+    },
+    "Episode_Reward/position": {
+      "step": 28,
+      "value": -0.08964168280363083,
+      "wall_time": 1795471499.4252853
+    },
+    "Episode_Reward/fine_reach": {
+      "step": 28,
+      "value": 0.003022610442712903,
+      "wall_time": 1795471499.4257226
+    },
+    "Episode_Reward/coarse_reach": {
+      "step": 28,
+      "value": 0.17491282522678375,
+      "wall_time": 1795471499.4261444
+    },
+    "Episode_Reward/orientation": {
+      "step": 28,
+      "value": -0.030313044786453247,
+      "wall_time": 1795471499.4265668
+    },
+    "Episode_Reward/grasp": {
+      "step": 28,
+      "value": 0.0,
+      "wall_time": 1795471499.4269798
+    },
+    "Episode_Reward/lift": {
+      "step": 28,
+      "value": 0.0,
+      "wall_time": 1795471499.4273896
+    },
+    "Episode_Reward/push": {
+      "step": 28,
+      "value": 0.041497524827718735,
+      "wall_time": 1795471499.427915
+    },
+    "Episode_Reward/success": {
+      "step": 28,
+      "value": 0.0,
+      "wall_time": 1795471499.4283218
+    },
+    "Episode_Reward/failure": {
+      "step": 28,
+      "value": -0.2500000298023224,
+      "wall_time": 1795471499.4288337
+    },
+    "Episode_Reward/collision": {
+      "step": 28,
+      "value": -0.11354035139083862,
+      "wall_time": 1795471499.429271
+    },
+    "Episode_Reward/action_rate": {
+      "step": 28,
+      "value": -0.003798441495746374,
+      "wall_time": 1795471499.429701
+    },
+    "Episode_Reward/joint_velocity": {
+      "step": 28,
+      "value": -0.03746148943901062,
+      "wall_time": 1795471499.4301133
+    },
+    "Episode_Reward/effort": {
+      "step": 28,
+      "value": -0.003208296140655875,
+      "wall_time": 1795471499.4305463
+    },
+    "Episode_Termination/lift_success": {
+      "step": 28,
+      "value": 0.0,
+      "wall_time": 1795471499.4331203
+    },
+    "Episode_Termination/push_success": {
+      "step": 28,
+      "value": 0.0,
+      "wall_time": 1795471499.4339693
+    },
+    "Loss/value": {
+      "step": 28,
+      "value": 1.520005702972412,
+      "wall_time": 1795471499.4348943
+    },
+    "Perf/total_fps": {
+      "step": 28,
+      "value": 353.0,
+      "wall_time": 1795471499.43503
+    },
+    "Perf/collection_time": {
+      "step": 28,
+      "value": 17.584339141845703,
+      "wall_time": 1795471499.4350362
+    },
+    "Perf/learning_time": {
+      "step": 28,
+      "value": 0.5357980728149414,
+      "wall_time": 1795471499.4350424
+    },
+    "Train/mean_reward": {
+      "step": 28,
+      "value": -3.779655933380127,
+      "wall_time": 1795471499.4351518
+    },
+    "Train/mean_reward/time": {
+      "step": 506,
+      "value": -3.779655933380127,
+      "wall_time": 1795471499.4352703
+    }
+  },
+  "max_hours": 3,
+  "max_iterations": 1000,
+  "num_envs": 100
+}

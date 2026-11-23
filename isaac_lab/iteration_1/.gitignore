@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+logs/
+verification/
+assets/*.usd
+assets/*.usda
+assets/*.usdc
+*.pt
+*.onnx
+*.etli
+.venv/

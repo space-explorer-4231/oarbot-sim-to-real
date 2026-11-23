@@ -1,8 +1,12 @@
-# OARBot Sim-to-Real Learning: PPO, World Models, and Safety
+# OARBot Whole-Body Learning: PPO and Sim-to-Real Research
 
 This project studies how to train the OARBot mobile manipulator for tabletop manipulation and evaluate transfer from simulation to physical hardware. OARBot combines a Clearpath Dingo base with a six-joint Kinova Jaco arm.
 
-The current Isaac Lab task focuses on reaching a pre-grasp pose above a tabletop cube with the base held stationary. The literature below guides the existing PPO setup and the proposed world-model and safety experiments.
+**November 23, 2026:** camera-based whole-body PPO is running with 100 parallel OARBots. One shared policy commands the mobile base, six arm joints, and three fingers. The task mixes cube lifting and pushing, with randomized starts, friction, calibration offsets, sensor noise, and one obstacle per arena.
+
+**Start here:** [working code and beginner guide](isaac_lab/iteration_1/README.md) · [PPO/control/reward math](isaac_lab/iteration_1/MATH.md) · [all parameters](isaac_lab/iteration_1/PARAMETERS.md) · [credits](isaac_lab/iteration_1/CREDITS.md) · [verification and limits](isaac_lab/iteration_1/EVIDENCE.md).
+
+The source code is published; the robot USD and trained checkpoints remain external assets on SVR2, with setup/export instructions included. Reliable learned grasping and real-robot transfer are not established results. The literature below explains the baseline and future research directions.
 
 ## Literature
 
@@ -44,22 +48,16 @@ Nakamura, K., Peters, L., & Bajcsy, A. (2025). *Generalizing Safety Beyond Colli
 
 ## Current OARBot implementation
 
-Status checked on November 22, 2026.
+The [Iteration 1 project](isaac_lab/iteration_1/) uses two RGB-D camera devices and internal encoders as policy input. Simulator geometry/contact values are reserved for reward and measurement. A 12-output actor controls body motion, six arm targets, and three finger closures; all copies share its weights. A critic helps PPO estimate future return.
 
-- Custom manager-based Isaac Lab reach task using the OARBot USD asset from the Isaac Sim tabletop scene.
-- Six Kinova joint-position actions with a fixed base.
-- Randomized cube/target placement within a small reachable tabletop region.
-- PPO actor and critic configurations, short training checks, and saved checkpoints.
-- Observation noise is currently disabled. Learned grasping, base control, world-model training, and latent safety filtering remain future work.
+A 101-environment check completed three PPO updates, saved changed finite weights, and reloaded a checkpoint. The user then started a longer 100-environment run and confirmed live viewing. This verifies execution, not convergence or pick-and-place reliability. The initial stationary reach task is earlier work; scripted stacking demonstrations are separate from learned-policy results.
 
-The existing scripted stacking demonstrations and short PPO checks are separate results. Reliable learned pick-and-place and physical sim-to-real transfer have not yet been established.
+## Next research steps
 
-## Planned experiments
-
-1. Add explicit collision measurements, a sustained reach-success criterion, and fixed held-out evaluation targets.
-2. Run longer PPO training with 1,000 parallel environments sharing one policy. Compare nominal training against controlled noise, delay, and physical randomization.
-3. Train and validate an OARBot world model, then compare BPTT-based policy learning against PPO on the same task.
-4. Extend to grasping and a camera-based safety-filter experiment. Train mobile-base behavior as an additional task.
-5. Plot success, reach error, collisions, prediction error, and training time before evaluating transfer to physical hardware.
+1. Evaluate the current saved policy on held-out cube positions and report lift/push success, collisions, and time; exclude randomized-length warm starts.
+2. Benchmark increasing camera-equipped environment counts before targeting 1,000. Compare physical/sensor randomization through controlled runs.
+3. Fit and validate an OARBot world model, then implement a BPTT-based policy learner for a fair comparison with PPO. No world-model/BPTT training is implemented yet.
+4. Add and evaluate a learned safety filter, then build and validate the physical robot interface and camera calibration before sim-to-real trials.
 
 Paper findings above are attributed to their authors. Proposed OARBot adaptations are experiments to implement and test.
+
